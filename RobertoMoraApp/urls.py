@@ -9,6 +9,7 @@ urlpatterns = [
     path('Proveedor', views.proveedor,name='Proveedor'),
     path('Material', views.material,name='Material'),
     path('Factura', views.factura,name='Factura'),
-    path('BuscarFactura', views.buscarfactura, name='BuscarFactura'),
+    path('BusquedaFactura', views.busquedafactura, name='BusquedaFactura'),
+    path('BuscarFactura/', views.buscarfactura),
 ]
 

@@ -1,4 +1,3 @@
-import datetime
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
 from RobertoMoraApp.models import Cliente,Proveedor,Material,Factura
@@ -43,7 +42,7 @@ def material(request):
             print (miFormulario)
             if miFormulario.is_valid:
                   informacion =miFormulario.cleaned_data
-                  material= Material(nombre=informacion['nombre'], cantidad=informacion['cantidad'],fechaDeEntrega=datetime.datetime(informacion['fecha de entrega']), entregado=informacion['entregado'], facturado=informacion['facturado'])
+                  material= Material(nombre=informacion['nombre'], cantidad=informacion['cantidad'],fechaDeEntrega=informacion['fechaDeEntrega'], entregado=informacion['entregado'], facturado=informacion['facturado'])
                   material.save()
             return render(request,'RobertoMoraApp/inicio.html')
       else:
@@ -64,6 +63,9 @@ def factura(request):
             miFormulario=FacturaFormulario()
       return render (request, 'RobertoMoraApp/Factura.html', {"miFormulario":miFormulario})
 
+def busquedafactura (request):
+      return render(request, "RobertoMoraApp/BusquedaFactura.html")
+
 def buscarfactura (request):
       if request.GET["numero"]:
             numero=request.GET['numero']
@@ -71,4 +73,4 @@ def buscarfactura (request):
             return render (request, "RobertoMoraApp/BuscarFactura.html",{"facturas":facturas ,"numero":numero} )
       else:
             respuesta="No enviaste datos"
-      return render(request,"RobertoMoraApp/BuscarFactura.html",{"respuesta":respuesta})
+      return render (request, "RobertoMoraApp/BuscarFactura.html",{"respuesta":respuesta} )
