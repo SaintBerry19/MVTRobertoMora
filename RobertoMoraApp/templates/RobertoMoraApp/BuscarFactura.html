@@ -1,0 +1,19 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+ <p>Estamos buscando la factura: {{numero}}</p>
+ {% if facturas %}
+  <ul>
+  {%for factura in facturas%}
+     <li>{{factura.numero}}</li>
+     <li>{{factura.fechafactura}}</li>
+     <li>{{factura.total}}</li>
+  {%endfor%}
+  </ul>
+
+
+ {%else%}
+ <p>No hay datos con esa descripción.</p>
+ {%endif%}
+ <p style="color:red">{{respuesta}}</p>
+{% endblock %}

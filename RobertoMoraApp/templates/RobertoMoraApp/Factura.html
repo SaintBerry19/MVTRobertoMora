@@ -1,0 +1,15 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+   <h1>Facturas</h1>
+   <p>Información necesaria de la facura: </p>
+   {%if miFormulario.errors%}
+   <p style="color: red;">Estan mal los datos! Favor de revisar.</p>
+   {%endif%}
+     <form action = "" method="POST"> {%csrf_token%}
+       <table>
+         {{miFormulario.as_table}}
+       </table>
+       <input type ="submit" value="Enviar">
+     </form>
+{% endblock %}
