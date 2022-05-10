@@ -1,0 +1,27 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+  <div class="container position-relative">
+    <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Busqueda en Proveedor:  </h1>
+      <div class="row justify-content-left">
+          <div class="col-xl-12">
+              <div class="text-left text-white">
+                 {% if proveedor %}
+                 <h3 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Estamos buscando los proveedores con apellido: {{apellido}}</h3>
+                 <h4> A continuación se muestran los resultados:</h4>
+                  <ul>
+                  {%for proveedores in proveedor%}
+                     <li> Apellido: {{proveedores.apellido}}, Nombre: {{proveedores.nombre}}, Email: {{proveedores.email}}, Profesion: {{proveedores.profesion}}, Empresa: {{proveedores.empresa}}</li>
+                  {%endfor%}
+                  </ul>
+                 {%else%}
+                 <p>No hay datos con esa descripción.</p>
+                 {%endif%}
+                 <p style="color:red">{{respuesta}}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+ </header>
+{% endblock %}

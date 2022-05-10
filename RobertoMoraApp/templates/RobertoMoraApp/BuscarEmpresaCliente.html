@@ -1,0 +1,27 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+   <div class="container position-relative">
+     <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Busqueda en Clientes:  </h1>
+       <div class="row justify-content-left">
+           <div class="col-xl-12">
+               <div class="text-left text-white">
+                  {% if cliente %}
+                  <h3 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Estamos buscando los clientes de la empresa: {{empresa}}</h3>
+                  <h4> A continuación se muestran los resultados:</h4>
+                   <ul>
+                   {%for clientes in cliente%}
+                      <li> Empresa: {{clientes.empresa}}, Nombre: {{clientes.nombre}}, Apellido: {{clientes.apellido}}, Email: {{clientes.email}}, Profesion: {{clientes.profesion}}</li>
+                   {%endfor%}
+                   </ul>
+                  {%else%}
+                  <p>No hay datos con esa descripción.</p>
+                  {%endif%}
+                  <p style="color:red">{{respuesta}}</p>
+               </div>
+           </div>
+       </div>
+   </div>
+  </header>
+{% endblock %}

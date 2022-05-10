@@ -1,0 +1,27 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+   <div class="container position-relative">
+     <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Busqueda en Material:  </h1>
+       <div class="row justify-content-left">
+           <div class="col-xl-12">
+               <div class="text-left text-white">
+                  {% if material %}
+                  <h3 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Estamos buscando los materiales con nombre: {{nombre}}</h3>
+                  <h4> A continuación se muestran los resultados:</h4>
+                   <ul>
+                   {%for materiales in material%}
+                      <li>  Nombre: {{materiales.nombre}},Numero de Pedido: {{materiales.numeropedido}}  , Cantidad: {{materiales.cantidad}} , Fecha De Entrega: {{materiales.fechaDeEntrega}}, Entregado: {{materiales.entregado}}, Facturado: {{materiales.facturado}}</li>
+                   {%endfor%}
+                   </ul>
+                  {%else%}
+                  <p>No hay datos con esa descripción.</p>
+                  {%endif%}
+                  <p style="color:red">{{respuesta}}</p>
+               </div>
+           </div>
+       </div>
+   </div>
+  </header>
+{% endblock %}

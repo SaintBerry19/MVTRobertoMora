@@ -1,0 +1,25 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+   <div class="container position-relative">
+    <h1 align="center" class="mb-5" style="color:rgb(255, 255, 255)"> Tu sesión ha finalizado. </h1>
+    <h2 align="center" style="color:rgb(255, 255, 255)">Vuelve pronto.</h2>
+       <div class="row justify-content-center">
+           <div class="col-xl-6">
+               <div class="text-center text-white">
+               <img align="justify-content-center" height="250" width="250" src="/media/avatares/imagen8.png"/>
+               <br>
+               <br>
+               <button>
+                <a href="{% url 'Login' %}"> Deseas Iniciar Sesión? Iniciar Sesión </a>  
+               </button>
+               <button>
+                <a href="{% url 'Register' %}"> No te has registrado? Registrate! </a>  
+              </button>  
+            </div>
+           </div>
+       </div>
+   </div>
+ </header> 
+{% endblock %} 

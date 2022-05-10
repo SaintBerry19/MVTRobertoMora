@@ -1,0 +1,94 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead" >
+   <div class="container position-relative">
+       <div class="row justify-content-left">
+           <div class="col-xl-15">
+               <div class="text-left text-white">
+                  <h2>Buscador de Clientes: </h2>
+                  <form action="/RobertoMoraApp/BuscarProfesionCliente/" method="GET">
+                     <input type="text" name="profesion" id="profesion">
+                     <input type= "submit" value="Buscar Clientes Por Profesion">
+                  </form>
+                                  <form action="/RobertoMoraApp/BuscarEmpresaCliente/" method="GET">
+                     <input type="text" name="empresa" id="empresa">
+                     <input type= "submit" value="Buscar Clientes Por Empresa">
+                  </form> 
+                  <form action="/RobertoMoraApp/BuscarNombreCliente/" method="GET">
+                     <input type="text" name="nombre" id="nombre">
+                     <input type= "submit" value="Buscar Clientes Por Nombre">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarApellidoCliente/" method="GET">
+                     <input type="text" name="apellido" id="apellido">
+                     <input type= "submit" value="Buscar Clientes Por Apellido">
+                  </form>                            
+                  <form action="/RobertoMoraApp/BuscarEmailCliente/" method="GET">
+                     <input type="email" name="email" id="email">
+                     <input type= "submit" value="Buscar Clientes Por Email">
+                  </form>              
+                  <br>
+                  <img align="right" height="350px" width="500" src="/media/avatares/imagen6.png"/>
+                  <h2>Buscador de Proveedores: </h2>
+                  <form action="/RobertoMoraApp/BuscarProfesionProveedor/" method="GET">
+                     <input type="text" name="profesion" id="profesion">
+                     <input type= "submit" value="Buscar Proveedor Por Profesion">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarEmpresaProveedor/" method="GET">
+                     <input type="text" name="empresa" id="empresa">
+                     <input type= "submit" value="Buscar Proveedor Por Empresa">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarNombreProveedor/" method="GET">
+                     <input type="text" name="nombre" id="nombre">
+                     <input type= "submit" value="Buscar Proveedor Por Nombre">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarApellidoProveedor/" method="GET">
+                     <input type="text" name="apellido" id="apellido">
+                     <input type= "submit" value="Buscar Proveedor Por Apellido">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarEmailProveedor/" method="GET">
+                     <input type="email" name="email" id="email">
+                     <input type= "submit" value="Buscar Proveedor Por Email">
+                  </form>
+
+                  <br>
+                  
+                  <h2>Buscador de Material: </h2>
+                  <form action="/RobertoMoraApp/BuscarNumeroPedidoMaterial/" method="GET">
+                     <input type="number" name="numeropedido" id="numeropedido">
+                     <input type= "submit" value="Buscar Material Por Numero Pedido">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarCantidadMaterial/" method="GET">
+                     <input type="number" name="cantidad" id="cantidad">
+                     <input type= "submit" value="Buscar Material Por Cantidad">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarNombreMaterial/" method="GET">
+                     <input type="text" name="nombre" id="nombre">
+                     <input type= "submit" value="Buscar Material Por Nombre">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarFechaDeEntrega/" method="GET">
+                     <input type="date" name="fechaDeEntrega" id="fechaDeEntrega">
+                     <input type= "submit" value="Buscar Material Por Fecha De Entrega">
+                  </form>
+                  <br>
+                  
+                  <h2>Buscador de Facturas: </h2>
+                  <form action="/RobertoMoraApp/BuscarNumeroFactura/" method="GET">
+                     <input type="number" name="numero" id="numero">
+                     <input type= "submit" value="Buscar Numero de Factura">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarTotalFactura/" method="GET">
+                     <input type="number" name="total" id="total">
+                     <input type= "submit" value="Buscar Total de Factura">
+                  </form>
+                  <form action="/RobertoMoraApp/BuscarFechaFactura/" method="GET">
+                     <input type="date" name="fechafactura" id="fechafactura">
+                     <input type= "submit" value="Buscar Fecha de Factura">
+                  </form>
+               </div>
+           </div>
+       </div>
+   </div>
+ </header>
+
+{% endblock %}

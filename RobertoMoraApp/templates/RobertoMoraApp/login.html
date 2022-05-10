@@ -1,0 +1,26 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+ <header class="masthead">
+   <div class="container position-relative">
+    <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Bienvenido al App! Inicia Sesión o Registrate.  </h1>
+    <img align="left" height="250" width="350" src="/media/avatares/imagen7.png"/>
+       <div class="row justify-content-left">
+           <div class="col-xl-18">
+               <div class="text-left text-white">
+                <form action="" method="POST">
+                    {% csrf_token%}
+                    {{form.as_p}}
+                    <button type="subtmit">Iniciar Sesión</button>
+                   </form>
+                   <br>
+                   <button>
+                      <a href="{% url 'Register' %}"> No te has registrado? Registrate! </a>  
+                    </button>
+               </div>
+           </div>
+       </div>
+   </div>
+ </header> 
+
+{% endblock %}

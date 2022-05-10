@@ -1,0 +1,25 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+  <div class="container position-relative">
+    <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Edición de entrada en Proveedores:  </h1>
+    <h3 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Información necesaria del proveedor:</h3>
+      <div class="row justify-content-left">
+          <div class="col-xl-9">
+              <div class="text-left text-white">
+                {%if miFormulario.errors%}
+                <p style="color: red;">Estan mal los datos! Favor de revisar.</p>
+                {%endif%}
+                  <form action = "" method="POST"> {%csrf_token%}
+                    <table>
+                      {{miFormulario.as_table}}
+                    </table>
+                    <input type ="submit" value="Actualizar">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+ </header>
+{% endblock %}

@@ -1,15 +1,31 @@
 {% extends "RobertoMoraApp/padre.html" %}     
 {% load static%}
 {% block contenidoQueCambia %}
-   <h1>Facturas</h1>
-   <p>Información necesaria de la facura: </p>
-   {%if miFormulario.errors%}
-   <p style="color: red;">Estan mal los datos! Favor de revisar.</p>
-   {%endif%}
-     <form action = "" method="POST"> {%csrf_token%}
-       <table>
-         {{miFormulario.as_table}}
-       </table>
-       <input type ="submit" value="Enviar">
-     </form>
+<header class="masthead" >
+  <div class="container position-relative">
+      <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Facturas: </h1>
+      <img align="left" height="350" width="350"  src="/media/avatares/imagen5.png" />
+      <div class="row justify-content-center">
+          <div class="col-xl-6">
+              <div class="text-left text-white">
+                <h2>Información necesaria de la factura: </h2>
+                {%if miFormulario.errors%}
+                <p style="color: red;">Estan mal los datos! Favor de revisar.</p>
+                {%endif%}
+                  <form action = "" method="POST"> {%csrf_token%}
+                    <table>
+                      {{miFormulario.as_table}}
+                    </table>
+                    <input type ="submit" value="Enviar">
+                  </form>
+                  <br>
+                  <form action="/RobertoMoraApp/LeerFactura/">
+                   <input type="submit" value="Mostrar Facturas Registradas">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
 {% endblock %}
+

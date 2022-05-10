@@ -1,0 +1,31 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+  <header class="masthead">
+    <div class="container position-relative">
+      <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> Registro de Facturas:  </h1>
+      <h3 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> A continuación se despliega la lista de facturas registradas:</h3>
+        <div class="row justify-content-left">
+            <div class="col-xl-9">
+                <div class="text-left text-white">
+                  {% for f in factura%}
+                  <li>{{f}}</li>
+                  <button class="button1">
+                    <a href="{% url 'EditarFactura' f.numero %}"> Editar </a>  
+                  </button>
+                  <button class="button1">
+                    <a href="{% url 'EliminarFactura' f.numero %}"> Eliminar </a>
+                  </button>
+                 {%endfor %}
+                 <br>
+                 <br>
+                 <br>
+                 <button class="button1">
+                  <a href="{% url 'Factura' %}"> Agregar Otro Factura </a>  
+                 </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+{% endblock %}   

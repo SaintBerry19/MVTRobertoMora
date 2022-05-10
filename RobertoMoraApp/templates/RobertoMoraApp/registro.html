@@ -1,0 +1,23 @@
+{% extends "RobertoMoraApp/padre.html" %}     
+{% load static%}
+{% block contenidoQueCambia %}
+<header class="masthead">
+   <div class="container position-relative">
+      <div class="col-xl-18"></div>
+        <h1 align="center"class="mb-5" style="color:rgb(255, 255, 255)"> Registro: </h1>
+        <h4 align="center"class="mb-5" style="color:rgb(255, 255, 255)"> Información Obligatoria: </h4>
+               <div class="text-center text-white">
+                  <form action="" method="POST">
+                     {% csrf_token%}
+                     {{form.as_p}}
+                     <button type="subtmit">Registrate!</button>
+                    </form>
+                    <br>
+                    <button>
+                       <a href="{% url 'Login' %}"> Deseas Iniciar Sesión? Iniciar Sesión </a>  
+                     </button>
+               </div>
+            </div>
+   </div>
+ </header> 
+{% endblock %}

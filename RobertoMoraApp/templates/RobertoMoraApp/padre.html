@@ -24,43 +24,47 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'Inicio' %}">About me</a>
                 <a class="navbar-brand" href="{% url 'Cliente' %}">Clientes</a>
                 <a class="navbar-brand" href="{% url 'Proveedor' %}">Proveedores</a>
                 <a class="navbar-brand" href="{% url 'Material' %}">Materiales</a>
                 <a class="navbar-brand" href="{% url 'Factura' %}">Facturas</a>
-                <a class="navbar-brand" href="{% url 'BusquedaFactura' %}">Buscar Factura</a>
-                <a class="btn btn-primary" href="#signup">INICIAR</a>
+                <a class="navbar-brand" href="{% url 'Busquedas' %}">Busquedas</a>
+                {%if not request.user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>
+                {%else %}
+                <div class="text-center"><img height="40px" src="{{url}}"></div>
+                <h2 class="text-muted small mb-4 mb-lg-0" > Bienvenido, {{user.username}}!
+                    <br>
+                     <style> .button1 {border: none; text-align: center;} 
+                             .button2 {border: none; text-align: center; background-color: transparent;}</style>
+                    <button class="button1" >
+                        <a class= "text-center text-muted" href="{% url 'EditarPerfil' %}"> Edita tu Perfil! </a>  
+                    </button>
+                </h2>              
+                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                {%endif%}
             </div>
         </nav>
+        <!-- Esto es lo que va a cambiar -->
+        {%block contenidoQueCambia%}
 
-
-        <!-- Masthead-->
+        <!-- Masthead
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">Primera Entrega Del Proyecto Final</h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                           
+                            <h1 class="mb-5"> Proyecto Final! </h1>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </header> -->
        
 
-        <!-- Esto es lo que va a cambiar -->
-        {%block contenidoQueCambia%}
+
+        
         
         {%endblock%}
         <!-- Footer-->
@@ -85,7 +89,7 @@
                                 <a href="#!"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                                <a href=""><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,34 @@
 {% extends "RobertoMoraApp/padre.html" %}     
 {% load static%}
 {% block contenidoQueCambia %}
-   <h1>Primera Entrega Proyecto Final! </h1>
+ <header class="masthead" >
+    <div class="container position-relative">
+        <h1 align="left"class="mb-5" style="color:rgb(255, 255, 255)"> {{mensaje}} </h1>
+        <img align="left" src="/media/avatares/Imagen1.jpg"/>
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <h2 class="mb-5"> About me:</h2>
+                    <style>.text-justificado {text-align: justify;}</style>
+                    <p class="text-justificado" >Mi nombre es Roberto Mora, Ingeniero Químico con dos años de experiencia en gestión de proyectos,
+                        y optimización de procesos. Con capacidad para trabajar en equipos multidisciplinarios.
+                        y tratar y negociar con los proveedores. Deseando formar parte de un equipo profesional,
+                        en el que se pueda aplicar el conocimiento técnico para desarrollar proyectos y soluciones para
+                        y mejora laboral.
+                    </p>
+                    <br>
+                    <h2 class="mb-5"> About the project:</h2>
+                    <style>.text-justificado {text-align: justify;}</style>
+                    <p class="text-justificado" >Se generó una App tipo blog para el registro de
+                        clientes, proveedores, pedidos, materiales y facturas en una base de datos,
+                        para su futuro procesamiento en software de análisis de datos como PowerBi.
+                        Ademas se permite a los usuarios registrados ver, registrar, modificar, y 
+                        eliminar entradas, todo esto mientras el usuario es reconocido por la interfaz
+                        brindadole un avatar personalizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+ </header> 
 {% endblock %}
